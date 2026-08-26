@@ -1,11 +1,12 @@
 # Neovim Bootstrap Dotfiles
-:cherry_blossom: **Resonable** :cherry_blossom: single-file very-minimal opinionated config to bootstrap your nvim journey.
+:cherry_blossom: **Resonable** :cherry_blossom: minimal single-file opinionated config to bootstrap your nvim journey.
 Clone directory to your `~/.config/nvim`.
 
 Required packages:
-- `nvim` (0.12+)
+- `neovim` (0.11+)
+- `wl-copy` for system clipboard sync
 
-One plugin is installed (0.12+ required), if you are on older versions remove the plugin section from init.lua.
+One [plugin](https://github.com/nvim-mini/mini.clue.git) is installed if you are on recent nvim versions (0.12+ required), you are free to remove the plugin section from init.lua.
 
 # Learn/practice Vim
 

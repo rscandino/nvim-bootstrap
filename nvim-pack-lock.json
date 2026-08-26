@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "mini.clue": {
+      "rev": "4d506660e7030a15748ab073bebfe3ed03884000",
+      "src": "https://github.com/nvim-mini/mini.clue.git"
+    }
+  }
+}
