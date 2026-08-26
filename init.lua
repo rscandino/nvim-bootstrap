@@ -7,42 +7,47 @@ vim.g.mapleader =  " "
 
 -----------------------[ Plugins ]-----------------------
 
--- download plugins with built-in vim.pack (nvim >= 0.12, remove lines if < 0.12)
--- you don't really need plugins, mini.clue helps you remember keymaps
--- comment/delete the entire section if you don't want it
+-- Check Neovim version >= 0.12
+if vim.fn.has('nvim-0.12') == 1 then
 
-vim.pack.add({
-  { src = "https://github.com/nvim-mini/mini.clue.git" }
-})
+    -- download plugins with built-in vim.pack
+    -- you don't really need plugins, mini.clue helps you remember keymaps
+    -- comment/delete the entire section if you don't want it
+    vim.pack.add({
+        { src = "https://github.com/nvim-mini/mini.clue.git" }
+    })
 
--- loading and configuring mini.clue
-local miniclue = require 'mini.clue'
-miniclue.setup {
-  triggers = {
-    { mode = { 'n', 'x' }, keys = 'g' },
-    { mode = { 'n', 'x' }, keys = '`' },
-    { mode = { 'n', 'x' }, keys = '"' },
-    { mode = { 'n', 'x' }, keys = 'z' },
-    { mode = { 'i', 'c' }, keys = '<C-r>' },
-    { mode = 'n', keys = '<C-w>' },
-    { mode = 'i', keys = '<C-x>' },
-    { mode = { 'n', 'x' }, keys = '<leader>' },
-    { mode = 'n', keys = '[' },
-    { mode = 'n', keys = ']' },
-  },
-  clues = {
-    miniclue.gen_clues.g(),
-    miniclue.gen_clues.z(),
-    miniclue.gen_clues.marks(),
-    miniclue.gen_clues.registers(),
-    miniclue.gen_clues.windows(),
-  },
-  window = {
-    delay = 500,
-    scroll_down = '<C-f>',
-    scroll_up = '<C-b>',
-  },
-}
+    -- loading and configuring mini.clue
+    local miniclue = require 'mini.clue'
+    miniclue.setup {
+        triggers = {
+            { mode = { 'n', 'x' }, keys = 'g' },
+            { mode = { 'n', 'x' }, keys = '`' },
+            { mode = { 'n', 'x' }, keys = '"' },
+            { mode = { 'n', 'x' }, keys = 'z' },
+            { mode = { 'i', 'c' }, keys = '<C-r>' },
+            { mode = 'n', keys = '<C-w>' },
+            { mode = 'i', keys = '<C-x>' },
+            { mode = { 'n', 'x' }, keys = '<leader>' },
+            { mode = 'n', keys = '[' },
+            { mode = 'n', keys = ']' },
+        },
+        clues = {
+            miniclue.gen_clues.g(),
+            miniclue.gen_clues.z(),
+            miniclue.gen_clues.marks(),
+            miniclue.gen_clues.registers(),
+            miniclue.gen_clues.windows(),
+        },
+        window = {
+            delay = 500,
+            scroll_down = '<C-f>',
+            scroll_up = '<C-b>',
+        },
+    }
+
+end
+
 
 -----------------------[ Options ]-----------------------
 
@@ -53,6 +58,10 @@ vim.opt.relativenumber = true
 -- set default indentation
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+
+-- set indentation behaviour
+vim.o.smartindent = true
+vim.o.shiftround = true
 
 -- use spaces when inserting tabs
 vim.opt.expandtab = true
