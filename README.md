@@ -4,7 +4,7 @@ Clone directory to your `~/.config/nvim`.
 
 Required packages:
 - `neovim` (0.11+)
-- `wl-copy` for system clipboard sync
+- `wl-copy` for system clipboard sync (on wayland)
 
 One [plugin](https://github.com/nvim-mini/mini.clue.git) is installed if you are on recent nvim versions (0.12+ required), you are free to remove the plugin section from init.lua.
 
